@@ -42,3 +42,92 @@ nav ul li a:hover {
     background-color: #e2b96f;
     color: #1a1a2e;
 }
+
+#mysection {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+#mysection h2 {
+    font-size: 40px;
+    color: #e2b96f;
+    margin-bottom: 15px;
+}
+
+#mysection p {
+  font-size: 18px;
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+#mysection button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin: 0 10px;
+    cursor:pointer;
+    transition: background-color 0.3s;
+}
+
+#mysection button {
+  background-color: #e2b96f;
+  color: #1a1a2e;
+  font-weight: bold;
+}
+#mysection button:hover {
+  background-color: #f0d090;
+}
+
+#features-section {
+    padding:60px 30px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#features-section h2 {
+    font-size: 30px;
+    color: #1a1a2e;
+    margin-bottom: 40px;
+}
+
+#core-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 220px;
+    transition: transform 0.3s , box-shadow 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #e2b96f;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #777777;
+}
+footer {
+    background-color: #1a1a2e;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
