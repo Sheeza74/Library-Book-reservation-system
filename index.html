@@ -9,11 +9,25 @@
         <nav>
             <h1>Library System📚</h1>
             <ul id="nav-books">
-                <li><a href="#Home" >Home</a></li>
-                <li><a href="#catalog" >Books</a></li>
-                <li><a href="#login" >Login</a></li>
-                <li><a href="#register" >Register</a></li>
+                <li><a href="#" onclick="showpage('Home')" >Home</a></li>
+                <li><a href="#" onclick="showpage('catalog')">Books</a></li>
+                <li><a href="#" onclick="showpage('login')">Login</a></li>
+                <li><a href="#" onclick="showpage('register')">Register</a></li>
             </ul>
+
+             <ul id="nav-student">
+                 <li><a href="#" onclick="showPage('home')">Home</a></li>
+                 <li><a href="#" onclick="showPage('catalog')">Books</a></li>
+                 <li><a href="#" onclick="showPage('dashboard')">Dashboard</a></li>
+                 <li><a href="#" onclick="logout()">Logout</a></li>
+             </ul>
+
+             <ul id="nav-admin">
+                 <li><a href="#" onclick="showPage('home')">Home</a></li>
+                 <li><a href="#" onclick="showPage('catalog')">Books</a></li>
+                 <li><a href="#" onclick="showPage('admin')">Admin Panel</a></li>
+                 <li><a href="#" onclick="logout()">Logout</a></li>
+             </ul>
         </nav>
 
         <!-- Homepage -->
@@ -57,6 +71,72 @@
                 </footer>
             </section>
 
+            <!-- Register page -->
+
+            <div id="register">
+                <section id="register-section">
+                    <h2>Create Account</h2>
+                    <p>join the library Book Reservation System</p>
+
+                    <form id="register-form">
+                        <label>Full Name</label>
+                        <input id="reg-name"  type="text" placeholder="Enter your full name">
+
+                        <label>StudentID</label>
+                        <input id="reg-studentid" type="text" placeholder=" e.g F24BDOCS1M01166" >
+
+                        <label>Email</label>
+                        <input id="reg-email" type="email" placeholder="Enter your email" >
+
+                        <label>Password</label>
+                        <input id="reg-password" type="password" placeholder="Enter 8 character password" >
+
+                        <button type="button" onclick="register()" >Register</button>
+                    </form>
+
+                    <p>Already Registered? <a href="#" onclick="showpage('Login')" >Login Here</a></p>
+                </section>
+            </div>
+
+            <div id="login">
+                <section id="login-section">
+                    <h2>Login</h2>
+                    <p>Welcome Back! Login to your Account</p>
+
+                    <form id="login-form">
+                        <label>Email</label>
+                        <input id="login-email" type="email" placeholder="Enter your email">
+
+                        <label>Password</label>
+                        <input id="login-password" type="password" placeholder="Enter your password">
+
+                        <button type="button" onclick="login()">Login</button>
+                    </form>
+
+                    <p>New User?<a href="#" onclick="showpage('register')">Register Here</a></p>
+                </section>
+            </div>
+
+            <div id="catalog">
+                <section id="search-section">
+                    <h2>Browse Books</h2>
+                    <input id="search-input" type="text" placeholder="Search by title, author, genre, ISBN...">
+
+                    <button onclick="SearchBooks()">Search</button>
+                    <button onclick="loadBooks()">All Books</button>
+
+                    <select id="genr-filter" onchange="filterbygenre()">
+                        <option value="">All Genres</option>
+                        <option value="Programmimg">Programmimg</option>
+                        <option value="Science">Science</option>
+                        <option value="History">History</option>
+                        <option value="Literature">Literature</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Islamic studies">Islamic studies</option>
+                        <option value="Urdu">Urdu</option>
+                    </select>
+                </section>
+            </div>
 
          </div>
     </body>

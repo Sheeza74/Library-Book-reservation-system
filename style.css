@@ -131,3 +131,7 @@ footer {
     padding: 20px;
     font-size: 14px;
 }
+
+#register , #nav-student , #nav-admin , #login , #catalog{
+    display: none;
+}
