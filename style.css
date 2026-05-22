@@ -132,6 +132,443 @@ footer {
     font-size: 14px;
 }
 
-#register , #nav-student , #nav-admin , #login , #catalog{
+#register , #nav-student , #nav-admin , #login , #catalog , #dashboard , #tab-borrows, #tab-history, #tab-fines, #admin{
     display: none;
+}
+
+#register-section {
+  max-width: 450px;
+  margin: 60px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#register-section h2 {
+  font-size: 28px;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+#register-section > p {
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 25px;
+}
+
+#register-form label {
+  display: block;
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+ #register-form input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+#register-form input:focus {
+  border-color: #e2b96f;
+}
+
+#register-form button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #e2b96f;
+  color: #1a1a2e;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#register-form button:hover {
+  background-color: #f0d090;
+}
+#register-section > p:last-child {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777777;
+}
+ 
+#register-section > p:last-child a {
+  color: #e2b96f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#login-section {
+  max-width: 450px;
+  margin: 60px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+ 
+#login-section h2 {
+  font-size: 28px;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+ 
+#login-section > p {
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 25px;
+}
+#login-form label {
+  display: block;
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+ #login-form input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+ 
+#login-form input:focus {
+  border-color: #e2b96f;
+}
+
+#login-form button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #e2b96f;
+  color: #1a1a2e;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#login-form button:hover {
+  background-color: #f0d090;
+}
+ 
+#login-section > p:last-child {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777777;
+}
+ 
+#login-section > p:last-child a {
+  color: #e2b96f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#search-section {
+  background-color: #1a1a2e;
+  padding: 30px;
+  text-align: center;
+}
+ 
+#search-section h2 {
+  color: #e2b96f;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+#search-input {
+  padding: 10px 16px;
+  font-size: 15px;
+  width: 350px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-right: 8px;
+}
+#search-section button {
+  padding: 10px 20px;
+  font-size: 15px;
+  background-color: #e2b96f;
+  color: #1a1a2e;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 5px 4px;
+  transition: background-color 0.3s;
+}
+#search-section button:hover {
+  background-color: #f0d090;
+}
+#genre-filter {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  outline: none;
+}
+ 
+#books-section {
+  padding: 30px;
+}
+
+#books-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+#dashboard-sec {
+  background-color: #1a1a2e;
+  padding: 30px 40px;
+  color: white;
+}
+ #dashboard-sec h2 {
+  font-size: 26px;
+  color: #e2b96f;
+}
+#stats-section {
+  display: flex;
+  gap: 20px;
+  padding: 30px 40px;
+  flex-wrap: wrap;
+}
+.stat-box {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 25px 30px;
+  text-align: center;
+  min-width: 160px;
+  flex: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+ 
+.stat-box h3 {
+  font-size: 36px;
+  color: #e2b96f;
+  margin-bottom: 8px;
+}
+.stat-box p {
+  font-size: 13px;
+  color: #777777;
+}
+
+#tabs-section {
+  padding: 0 40px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #dddddd;
+}
+.tab-btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  background-color: transparent;
+  color: #555555;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.tab-btn:hover {
+  color: #e2b96f;
+  border-bottom: 3px solid #e2b96f;
+}
+.tab-btn.active {
+  color: #e2b96f;
+  border-bottom: 3px solid #e2b96f;
+}
+#tabs-content {
+  padding: 30px 40px;
+}
+ 
+#tabs-content h3 {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+}
+
+.reservation-item {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+ 
+.reservation-item p {
+  font-size: 14px;
+  color: #555555;
+}
+ 
+.reservation-item span {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #fff8e1;
+  color: #e2b96f;
+}
+ 
+.reservation-item button {
+  padding: 7px 16px;
+  font-size: 13px;
+  background-color: #e05a5a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+ 
+.reservation-item button:hover {
+  background-color: #c94444;
+}
+#admin {
+  padding: 30px 40px;
+}
+#admin h2 {
+  font-size: 28px;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+}
+ 
+#admin h3 {
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2b96f;
+}
+#add-book-sec {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+#add-book-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+ 
+#add-book-form input {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  outline: none;
+  flex: 1;
+  min-width: 160px;
+  transition: border-color 0.3s;
+}
+#add-book-form input:focus {
+  border-color: #e2b96f;
+}
+ 
+#add-book-form button {
+  padding: 10px 24px;
+  font-size: 15px;
+  background-color: #e2b96f;
+  color: #1a1a2e;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+ 
+#add-book-form button:hover {
+  background-color: #f0d090;
+}
+#all-reservations-section,
+#all-users-section,
+#book-inventory-sec {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+thead {
+  background-color: #1a1a2e;
+  color: #e2b96f;
+}
+ 
+th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 14px;
+}
+ 
+td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #555555;
+  border-bottom: 1px solid #eeeeee;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+ 
+tr:hover td {
+  background-color: #fffbf0;
+}
+ 
+td button {
+  padding: 6px 14px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+td button:first-of-type {
+  background-color: #e2b96f;
+  color: #1a1a2e;
+  margin-right: 5px;
+}
+ 
+td button:first-of-type:hover {
+  background-color: #f0d090;
+}
+ 
+td button:last-of-type {
+  background-color: #e05a5a;
+  color: white;
+}
+ 
+td button:last-of-type:hover {
+  background-color: #c94444;
 }

@@ -8,11 +8,11 @@
         <!-- Navbar -->
         <nav>
             <h1>Library System📚</h1>
-            <ul id="nav-books">
-                <li><a href="#" onclick="showpage('Home')" >Home</a></li>
-                <li><a href="#" onclick="showpage('catalog')">Books</a></li>
-                <li><a href="#" onclick="showpage('login')">Login</a></li>
-                <li><a href="#" onclick="showpage('register')">Register</a></li>
+            <ul id="nav-guest">
+                <li><a href="#" onclick="showPage('home')" >Home</a></li>
+                <li><a href="#" onclick="showPage('catalog')">Books</a></li>
+                <li><a href="#" onclick="showPage('login')">Login</a></li>
+                <li><a href="#" onclick="showPage('register')">Register</a></li>
             </ul>
 
              <ul id="nav-student">
@@ -30,13 +30,13 @@
              </ul>
         </nav>
 
-        <!-- Homepage -->
+                 <!-- Homepage -->
          <div id="home">
             <section id="mysection">
                 <h2>Welcome To Library Book Reservation</h2>
                 <p>Search , Reserve , and Borrow books online easily</p>
-                <button onclick="showpage('register')">Get Started</button>
-                <button onclick="showpage('catalog')">Browse Books</button>
+                <button onclick="showPage('register')">Get Started</button>
+                <button onclick="showPage('catalog')">Browse Books</button>
             </section>
 
             <!-- Features -->
@@ -70,7 +70,7 @@
                     <p>@ 2026 Library Book Reservation System | All Rights Reserved.</p>
                 </footer>
             </section>
-
+         </div>
             <!-- Register page -->
 
             <div id="register">
@@ -94,10 +94,10 @@
                         <button type="button" onclick="register()" >Register</button>
                     </form>
 
-                    <p>Already Registered? <a href="#" onclick="showpage('Login')" >Login Here</a></p>
+                    <p>Already Registered? <a href="#" onclick="showPage('login')" >Login Here</a></p>
                 </section>
             </div>
-
+             <!--  Login page -->
             <div id="login">
                 <section id="login-section">
                     <h2>Login</h2>
@@ -113,21 +113,21 @@
                         <button type="button" onclick="login()">Login</button>
                     </form>
 
-                    <p>New User?<a href="#" onclick="showpage('register')">Register Here</a></p>
+                    <p>New User?<a href="#" onclick="showPage('register')">Register Here</a></p>
                 </section>
             </div>
-
+                 <!-- Book Catalog page -->
             <div id="catalog">
                 <section id="search-section">
                     <h2>Browse Books</h2>
                     <input id="search-input" type="text" placeholder="Search by title, author, genre, ISBN...">
 
-                    <button onclick="SearchBooks()">Search</button>
+                    <button onclick="searchBooks()">Search</button>
                     <button onclick="loadBooks()">All Books</button>
 
-                    <select id="genr-filter" onchange="filterbygenre()">
+                    <select id="genre-filter" onchange="filterByGenre()">
                         <option value="">All Genres</option>
-                        <option value="Programmimg">Programmimg</option>
+                        <option value="Programming">Programming</option>
                         <option value="Science">Science</option>
                         <option value="History">History</option>
                         <option value="Literature">Literature</option>
@@ -136,8 +136,130 @@
                         <option value="Urdu">Urdu</option>
                     </select>
                 </section>
+
+                <div id="books-grid"></div>
+            </div>
+                     <!--  User dashboard page -->
+            <div id="dashboard">
+                <section id="dashboard-sec">
+                    <h2>Welcome, <span id="user-name">Student</span>! 👋</h2>
+                </section>
+
+                <section id="stats-section">
+                    <div class="stat-box">
+                        <h3 id="stat-reservation">0</h3>
+                        <p>Active Reservation</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3 id="stat-borrows">0</h3>
+                        <p>Currently Borrowed</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3 id="stat-fines">0</h3>
+                        <p>Unpaid Fines (PKR)</p>
+                    </div>
+                </section>
+
+                <section id="tabs-section">
+                    <button class="tab-btn" onclick="switchTab('tab-reservations')">My Reservations</button>
+                    <button class="tab-btn" onclick="switchTab('tab-borrows')">Borrowed Books</button>
+                    <button class="tab-btn" onclick="switchTab('tab-history')">History</button>
+                    <button class="tab-btn" onclick="switchTab('tab-fines')">My fines</button>
+                </section>
+
+                <section id="tabs-content">
+                    <div id="tab-reservations">
+                        <h3>My Active Reservations</h3>
+                        <div id="reservation-list"></div>
+                    </div>
+
+                    <div id="tab-borrows">
+                        <h3>Currently Borrowed Books</h3>
+                        <div id="borrowed-list"></div>
+                    </div>
+
+                    <div id="tab-history" >
+                        <h3>Borrowing History</h3>
+                        <div id="history-list"></div>
+                    </div>
+
+                    <div id="tab-fines" >
+                        <h3>My Fines</h3>
+                        <div id="fines-list"></div>
+                    </div>
+                </section>
             </div>
 
-         </div>
+            <!--  Admin Page -->
+
+            <div id="admin">
+                <h2>Admin Panel</h2>
+                <section id="add-book-sec">
+                    <h3>Add New Book</h3>
+                    <form id="add-book-form">
+                        <input type="text" id="book-title" placeholder="Book Title *">
+                        <input type="text" id="book-author" placeholder="Author *">
+                        <input type="text" id="book-genre" placeholder="Genre">
+                        <input type="text" id="book-isbn" placeholder="ISBN">
+                        <input type="text" id="book-copies" placeholder="Number of copies" min="1">
+                        <input type="text" id="book-cover" placeholder="Cover image URL (optional)">
+                        
+                        <button type="button" onclick="addBook()">Add Book</button>
+                    </form>
+                </section>
+
+                <section id="all-reservation-sec">
+                    <h3>All Reservations</h3>
+
+                    <table id="reservation-table">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Book Title</th>
+                                <th>Reserved Date</th>
+                                <th>Pickup Deadline</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservation-tbody"></tbody>
+                    </table>
+                </section>
+
+                <section id="all-user-section">
+                    <h3>All Registered Users</h3>
+
+                    <table id="users-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Student ID</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-tbody"></tbody>
+                    </table>
+                </section>
+
+                <section id="book-inventory-sec">
+                    <h3>Book Inventory</h3>
+                    <table id="books-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Genre</th>
+                                <th>Available copies</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="book-tbody"></tbody>
+                    </table>
+                </section>
+            </div>
+            <script src="app.js"></script>
     </body>
 </html>
