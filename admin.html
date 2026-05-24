@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Panel - Library System</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <!-- Admin Navbar -->
+        <nav id="admin-nav">
+            <h1>Admin Panel</h1>
+            <ul>
+                <li><a href="index.html">User Panel</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Stats Section -->
+        <section id="stats-section">
+            <h2> Stats</h2>
+            <div id="stats-grid">
+
+                <div class="stat-box">
+                    <h3 id="total-books">0</h3>
+                    <p>Total Books</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3 id="total-users">0</h3>
+                    <p>Total Users</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3 id="total-reservations">0</h3>
+                    <p>Total Reservations</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3 id="total-fines">0</h3>
+                    <p>Total Fines (PKR)</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Add New Book -->
+        <section id="add-book-sec">
+            <h3>Add New Book</h3>
+
+            <p id="err-title" class="error-msg"></p>
+            <p id="err-author" class="error-msg"></p>
+            <p id="book-success" class="success-msg"></p>
+
+            <form id="add-book-form">
+                <input type="text"   id="book-title"  placeholder="Book Title *">
+                <input type="text"   id="book-author" placeholder="Author *">
+                <input type="text"   id="book-genre"  placeholder="Genre">
+                <input type="text"   id="book-isbn"   placeholder="ISBN">
+                <input type="number" id="book-copies" placeholder="Number of Copies" min="1">
+                <input type="text"   id="book-cover"  placeholder="Cover Image URL (optional)">
+                <button type="button" onclick="addBook()">Add Book</button>
+            </form>
+        </section>
+
+        <!-- All Reservations -->
+        <section id="all-reservation-sec">
+            <h3>📋 All Reservations</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Book Title</th>
+                        <th>Reserved Date</th>
+                        <th>Pickup Deadline</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="reservation-tbody"></tbody>
+            </table>
+        </section>
+
+        <!-- All Users -->
+        <section id="all-user-section">
+            <h3>All Registered Users</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Student ID</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="user-tbody"></tbody>
+            </table>
+        </section>
+
+        <!-- Book Inventory -->
+        <section id="book-inventory-sec">
+            <h3>Book Inventory</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Available Copies</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="book-tbody"></tbody>
+            </table>
+        </section>
+
+        <script src="admin.js"></script>
+    </body>
+</html>

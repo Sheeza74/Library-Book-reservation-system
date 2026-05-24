@@ -136,6 +136,18 @@ footer {
     display: none;
 }
 
+.error-msg {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.success-msg {
+  color: green;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+
 #register-section {
   max-width: 450px;
   margin: 60px auto;

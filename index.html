@@ -22,12 +22,7 @@
                  <li><a href="#" onclick="logout()">Logout</a></li>
              </ul>
 
-             <ul id="nav-admin">
-                 <li><a href="#" onclick="showPage('home')">Home</a></li>
-                 <li><a href="#" onclick="showPage('catalog')">Books</a></li>
-                 <li><a href="#" onclick="showPage('admin')">Admin Panel</a></li>
-                 <li><a href="#" onclick="logout()">Logout</a></li>
-             </ul>
+             
         </nav>
 
                  <!-- Homepage -->
@@ -91,6 +86,9 @@
                         <label>Password</label>
                         <input id="reg-password" type="password" placeholder="Enter 8 character password" >
 
+                        <p id="reg-error" class="error-msg"></p>
+                        
+
                         <button type="button" onclick="register()" >Register</button>
                     </form>
 
@@ -109,6 +107,7 @@
 
                         <label>Password</label>
                         <input id="login-password" type="password" placeholder="Enter your password">
+                        <p id="login-error" class="error-msg"></p>
 
                         <button type="button" onclick="login()">Login</button>
                     </form>
@@ -192,74 +191,6 @@
                 </section>
             </div>
 
-            <!--  Admin Page -->
-
-            <div id="admin">
-                <h2>Admin Panel</h2>
-                <section id="add-book-sec">
-                    <h3>Add New Book</h3>
-                    <form id="add-book-form">
-                        <input type="text" id="book-title" placeholder="Book Title *">
-                        <input type="text" id="book-author" placeholder="Author *">
-                        <input type="text" id="book-genre" placeholder="Genre">
-                        <input type="text" id="book-isbn" placeholder="ISBN">
-                        <input type="text" id="book-copies" placeholder="Number of copies" min="1">
-                        <input type="text" id="book-cover" placeholder="Cover image URL (optional)">
-                        
-                        <button type="button" onclick="addBook()">Add Book</button>
-                    </form>
-                </section>
-
-                <section id="all-reservation-sec">
-                    <h3>All Reservations</h3>
-
-                    <table id="reservation-table">
-                        <thead>
-                            <tr>
-                                <th>Student Name</th>
-                                <th>Book Title</th>
-                                <th>Reserved Date</th>
-                                <th>Pickup Deadline</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="reservation-tbody"></tbody>
-                    </table>
-                </section>
-
-                <section id="all-user-section">
-                    <h3>All Registered Users</h3>
-
-                    <table id="users-table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Student ID</th>
-                                <th>Role</th>
-                            </tr>
-                        </thead>
-                        <tbody id="user-tbody"></tbody>
-                    </table>
-                </section>
-
-                <section id="book-inventory-sec">
-                    <h3>Book Inventory</h3>
-                    <table id="books-table">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Genre</th>
-                                <th>Available copies</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="book-tbody"></tbody>
-                    </table>
-                </section>
-            </div>
-            <script src="app.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
