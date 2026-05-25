@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@library.com",
+      "password": "admin123",
+      "role": "admin",
+      "studentId": "ADMIN-01"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "Clean Code",
+      "author": "Robert Martin",
+      "genre": "Programming",
+      "isbn": "9780132350884",
+      "copies": 3,
+      "cover": ""
+    },
+    {
+      "id": 2,
+      "title": "Introduction to Python",
+      "author": "John Smith",
+      "genre": "Programming",
+      "isbn": "9781234567890",
+      "copies": 5,
+      "cover": ""
+    },
+    {
+      "id": 3,
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "genre": "Science",
+      "isbn": "9780553380163",
+      "copies": 2,
+      "cover": ""
+    },
+    {
+      "id": 4,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "genre": "History",
+      "isbn": "9780062316097",
+      "copies": 4,
+      "cover": ""
+    },
+    {
+      "id": 5,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Literature",
+      "isbn": "9780743273565",
+      "copies": 3,
+      "cover": ""
+    }
+  ],
+  "reservations": [],
+  "borrows": [],
+  "fines": []
+}
