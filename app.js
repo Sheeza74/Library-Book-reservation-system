@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/';
+const API = 'http://localhost:3000';
 
 
 function showPage(pageId) {
@@ -32,7 +32,7 @@ function logout() {
 }
       
 function getUser() {
-    const data = localStorage.setItem('user');
+    const data = localStorage.getItem('user');
     if(data) {
         return JSON.parse(data);
     } else {
@@ -84,7 +84,7 @@ async function register() {
         });
         if (!result.ok) throw new Error ('Registration Failed!');
 
-        document.getElementById('reg-error').style.display = 'green';
+        document.getElementById('reg-error').style.color = 'green';
         document.getElementById('reg-error').textContent = 'Regiatration Successful! Please Login.';
 
         setTimeout(function() {
@@ -92,6 +92,46 @@ async function register() {
         } , 1500);
     } catch (error) {
         document.getElementById('reg-error').textContent = 'Cannot connect to server'
+    }
+}
+
+async function login() {
+    const email    = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+
+   
+    document.getElementById('login-error').textContent = '';
+
+    if (!email || !password) {
+        document.getElementById('login-error').textContent = 'Please enter email and password!';
+        return;
+    }
+
+    try {
+        document.getElementById('login-error').textContent = 'Please wait...';
+
+        const response = await fetch(`${API}/users?email=${email}&password=${password}`);
+        if (!response.ok) throw new Error('Server error!');
+        const users = await response.json();
+
+        if (users.length === 0) {
+            document.getElementById('login-error').textContent = 'Wrong email or password!';
+            return;
+        }
+
+        const user = users[0];
+        localStorage.setItem('user', JSON.stringify(user));
+
+        
+        if (user.role === 'admin') {
+            window.location.href = 'admin.html';
+        } else {
+            showNav('student');
+            showPage('dashboard');
+        }
+
+    } catch (error) {
+        document.getElementById('login-error').textContent = 'Cannot connect to server!';
     }
 }
 
